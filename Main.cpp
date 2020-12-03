@@ -19,13 +19,35 @@ try
  CString u("123"),v("cfd"),n;
  n = u + v;
  cout << n<< " in autotest\n";
- int k = strcmp(abra,n);
- cout << k;
+ int k = 0;
+ for(int i = 0; i < 6; i++){   // Тест на оператор слияния
+   if (abra[i] != n[i]){
+     k = 1;
+   }
+  } 
+ //cout << k;
  if (k == 0) {
-   cout << "Autotest passed\n";
+   cout << "Autotest 1 passed\n";
  }
  else {
-   cout << "Autotest failed\n";
+   cout << "Autotest 1 failed\n";
+ }
+ int h = 0;
+ CString kadabra("tmp");
+ CString m;
+ m = kadabra;
+ cout << m << "\n";
+ for(int i = 0; i < 3; i++){   // Тест на оператор копирования
+   if (m[i] != kadabra[i]){
+     h = 1;
+   }
+  } 
+ //cout << k;
+ if (h == 0) {
+   cout << "Autotest 2 passed\n";
+ }
+ else {
+   cout << "Autotest 2 failed\n";
  }
     
  cout<<"\ntest1. cout\n";
@@ -52,7 +74,6 @@ try
  cout<<"Введите строку Х: ";
  cin>>X;
  cout<<"X="<<X<<endl;
-
  }catch(int err){printf("error \n");}*/
   return 0;
 } 
